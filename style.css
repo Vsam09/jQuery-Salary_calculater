@@ -6,11 +6,16 @@ h1{
 }
 h2{
   margin-left: 2px;
+  color:azure;
 }
 h3{
   font-size: 24px;
   margin-left: 2px;
   margin-bottom: -8px;
+  color:azure;
+}
+body{
+  background-color: rgb(31, 80, 122);
 }
 
 button{
@@ -51,10 +56,13 @@ button {
 }
 div{
   float: right;
-  margin-right: 30px;
 }
 input{
   margin: 0px auto;
+}
+.totalValue{
+  font-size: 20px;
+  color:azure;
 }
 
 
