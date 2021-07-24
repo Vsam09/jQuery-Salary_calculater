@@ -13,8 +13,14 @@ function onReady() {
 //Delete after entry
 function deleteEntry(){
     console.log('Delete Button working..')
-    let empty = entry.val('');
-    return empty;
+    let empty = {
+        first: $('#firstName').val(''),
+        last: $('#lastName').val(''),
+        id: $('#number').val(''),
+        title: $('#title').val(''),
+        salary: $('#salary').val('')
+    }
+    return empty.val('');
 }
 //Get employee information after submit
 function entry() {
@@ -23,8 +29,8 @@ function entry() {
     entries.push(table);
     console.log('Entry Info', entries)
     renderEntry();
-    let totalPrice = calculateTotalPrice;
-    $('#totalPrice').text(entry.price)
+    let totalSalary = calculateTotalPrice();
+    $('#totalSalary').text(totalSalary.toFixed(2))
     
  }
  
@@ -35,7 +41,7 @@ function getEntry(){
         last: $('#lastName').val(),
         id: $('#number').val(),
         title: $('#title').val(),
-        salary: $('#salary').val()
+        salary: Number($('#salary').val())
 };
     return table;
 }
@@ -51,19 +57,19 @@ for (let table of entries) {
         <td>${table.last}</td>
         <td>${table.id}</td>
         <td>${table.title}</td>
-        <td>${table.salary}</td>
+        <td>$${table.salary}</td>
         <td><button id="delBtn1">Delete</button></td>
     </tr>
  `)
- }
+ };
 }
 
   //Calculate total price
  function calculateTotalPrice() {
 
- let totalPrice = 0;
+ let totalSalary = 0;
     for (let entry of entries){
-    totalPrice += entry.price;
- }
-    return totalPrice;
+    totalSalary += entry.salary;
+ };
+    return totalSalary;
 }
