@@ -7,37 +7,60 @@ $(document).ready(onReady)
 function onReady() {
     console.log('Run jQuery..')
     $('#addBtn').on('click', entry )
-    ${'#.deleteBtn'}.on('click',)
+    $('#delBtn1').on('click', deleteEntry )
 }
 
+//Delete after entry
+function deleteEntry(){
+    console.log('Delete Button working..')
+}
+
+//Get employee information after submit
 function entry() {
     console.log('Entry works..')
-
-let table = {
-    first: $('#firstName').val(),
-    last: $('#lastName').val(),
-    id: $('#idNumber').val(),
-    title: $('#title').val(),
-    salary: $('#salary').val()
- };
- entries.push(entry);
-
- $('#entryTable').append(`
-    <tr>
-        <td>${firstName.name}</td>
-        <td>${lastName.name}</td>
-        <td>${idNumber.num}</td>
-        <td>${title.name}</td>
-        <td>${salary.num}</td>
+    let table = getEntry;
+    entries.push(table);
+    renderEntry();
+    let totalPrice = calculateTotalPrice;
+    $('#totalPrice').text(entry.price)
     
-    </tr>
+ }
  
- `)
- //Calculate total price
- let totalPrice = 0;
- for (let entry of entries)
- totalPrice += entry.price
+// Collect employee Information
+function getEntry(){
+    let table = {
+        first: $('#firstNameInput').val(),
+        last: $('#lastNameInput').val(),
+        id: $('#numberInput').val(),
+        title: $('#titleInput').val(),
+        salary: $('#salaryInput').val()    
+};
+    return table;
+}
 
- //set total price
- $('#totalPrice').text(entry.price)
+//CLear table and start clean
+function renderEntry() {
+    $('#entryTable').empty();
+
+for (let entry of entries) {
+    $('#entryTable').append(`
+    <tr>
+        <td>${firstName.first}</td>
+        <td>${lastName.last}</td>
+        <td>${number.id}</td>
+        <td>${title.title}</td>
+        <td>${salary.salary}</td>
+    </tr>
+ `)
+ }
+}
+
+  //Calculate total price
+ function calculateTotalPrice() {
+
+ let totalPrice = 0;
+    for (let entry of entries){
+    totalPrice += entry.price;
+ }
+    return totalPrice;
 }

@@ -1,21 +1,63 @@
 h1{
-    background-color: gray;
-    text-align: center;
-    color: white;
+  text-align: center;
+  color: black;
+  background-color: lemonchiffon;
+  border: 1px solid black;
 }
-table{
-  background-color: gray;
-  width: 100%;
+h2{
+  margin-left: 2px;
 }
-table tr th {
-    font-size: 24px;
-  }
-  table td {
-    border: 1px solid black;
-  }
-  button{
+h3{
+  font-size: 24px;
+  margin-left: 2px;
+  margin-bottom: -8px;
+}
+
+button{
       float: right;
   }
-  table, td, td {
+  table {
+    width: 785px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: lemonchiffon;
+}
+
+th {
+    text-align: left;
+    font-size: 22px;
+    font-family: sans-serif;
+    padding: 7px 0;
+}
+
+table, td, th {
     border: 1px solid black;
 }
+td, th {
+    padding: 7px;
+}
+td {
+    font-size: 20px;
+}
+button {
+  float: right;
+  margin-right: 4px;
+  margin-top: 5px;
+  font-size: 16px;
+}
+.button1{
+  margin-right: 40px;
+  margin-bottom: 5px;
+}
+div{
+  float: right;
+  margin-right: 30px;
+}
+input{
+  margin: 0px auto;
+}
+
+
+
+
+

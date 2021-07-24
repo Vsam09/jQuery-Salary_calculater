@@ -12,14 +12,14 @@
 <body>
     <h1>Salary Calculator</h1>
     <h2>Add Employee</h2>
-    <input id="firstName" type="text" placeholder="First Name"</input>
-    <input id="lastName" type="text" placeholder="Last Name"</input>
-    <input id="idNumber" type="number" placeholder="ID"</input>
-    <input id="title" type="text" placeholder="Title"</input>
-    <input id="salary" type="number" placeholder="Salary"</input>
+    <input id="firstName" type="text" placeholder="First Name"></input>
+    <input id="lastName" type="text" placeholder="Last Name"></input>
+    <input id="number" type="number" placeholder="ID"></input>
+    <input id="title" type="text" placeholder="Title"></input>
+    <input id="salary" type="number" placeholder="Salary"></input>
     <button id="addBtn">Submit</button>
     <h3>Employee</h3>
-    <table id="entryTable">
+    <table>
         <thead>
             <tr>
                 <th>First Name</th>
@@ -27,8 +27,11 @@
                 <th>ID</th>
                 <th>Title</th>
                 <th>Salary</th>
-                <th></th>
+                <th><button id="delBtn1" class="button button1">Delete</button></th>
             </tr>
+            <tbody id="entryTable">
+
+            </tbody>
         </thead>
     </table>
     <div class="totalValue">
