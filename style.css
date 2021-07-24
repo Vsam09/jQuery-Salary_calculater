@@ -19,20 +19,20 @@ body{
 }
 
 button{
-      float: right;
+  float: right;
   }
-  table {
-    width: 785px;
-    margin: 0 auto;
-    margin-top: 10px;
-    background-color: lemonchiffon;
+table {
+  width: 785px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: lemonchiffon;
 }
 
 th {
-    text-align: left;
-    font-size: 22px;
-    font-family: sans-serif;
-    padding: 7px 0;
+  text-align: left;
+  font-size: 22px;
+  font-family: sans-serif;
+  padding: 7px 0;
 }
 
 table, td, th {

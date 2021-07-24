@@ -7,21 +7,21 @@ $(document).ready(onReady)
 function onReady() {
     console.log('Run jQuery..')
     $('#addBtn').on('click', entry )
-    $('#delBtn1').on('click', deleteEntry )
+    $('.delBtn1').on('click', deleteEntry )
 }
 
-//Delete after entry
+//Delete entry
 function deleteEntry(){
     console.log('Delete Button working..')
-
+    $('#entryTable').empty()
 }
-//End Delete afer entry
+//End Delete entry
 
 //Get employee information after submit
 function entry() {
     console.log('Entry works..')
-let table = getEntry();
-    entries.push(table);
+let employee = getEntry();
+    entries.push(employee);
     console.log('Entry Info', entries)
     renderEntry();
 let totalSalary = calculateTotalPrice();
@@ -31,14 +31,14 @@ let totalSalary = calculateTotalPrice();
  
 // Collect employee Information
 function getEntry(){
-let table = {
+let employee = {
     first: $('#firstName').val(),
     last: $('#lastName').val(),
     id: $('#number').val(),
     title: $('#title').val(),
     salary: Number($('#salary').val())
 };
-    return table;
+    return employee;
 }
 //End Collecting employee Information
 
@@ -46,15 +46,15 @@ let table = {
 function renderEntry() {
     $('#entryTable').empty();
 
-for (let table of entries) {
+for (let employee of entries) {
     $('#entryTable').append(`
     <tr>
-        <td>${table.first}</td>
-        <td>${table.last}</td>
-        <td>${table.id}</td>
-        <td>${table.title}</td>
-        <td>$${table.salary}</td>
-        <td><button id="delBtn1">Delete</button></td>
+        <td>${employee.first}</td>
+        <td>${employee.last}</td>
+        <td>${employee.id}</td>
+        <td>${employee.title}</td>
+        <td>$${employee.salary}</td>
+        <td><button data-id"${employee.id}" class="delBtn1">Delete</button></td>
     </tr>
  `)
  };
