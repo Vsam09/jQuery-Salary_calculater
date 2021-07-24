@@ -3,9 +3,11 @@ h1{
     text-align: center;
     color: white;
 }
-table {
-    border-collapse: collapse;
-    background-color: gray;
+table{
+  background-color: gray;
+  width: 100%;
+}
+table tr th {
     font-size: 24px;
   }
   table td {
@@ -14,3 +16,6 @@ table {
   button{
       float: right;
   }
+  table, td, td {
+    border: 1px solid black;
+}
