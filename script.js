@@ -1,4 +1,4 @@
-console.log('Run Script..')
+console.log('Run JS..')
 
 let entries = [];
 
@@ -6,14 +6,14 @@ $(document).ready(onReady)
 
 function onReady() {
     console.log('Run jQuery..')
-    $('#addBtn').on('click', entry )
-    $('.delBtn1').on('click', deleteEntry )
+    $('#addBtn').on('click', entry);
+    $(document).on('click', ".delBtn1", deleteEntry );
 }
 
 //Delete entry
 function deleteEntry(){
     console.log('Delete Button working..')
-    $('#entryTable').empty()
+    $(this).empty();
 }
 //End Delete entry
 
@@ -41,7 +41,13 @@ let employee = {
     return employee;
 }
 //End Collecting employee Information
-
+/*function emptyEntryInputs() {
+    $('#firstName').val(''),
+    $('#lastName').val(''),
+    $('#number').val(''),
+    $('#title').val(''),
+    $('#salary').val('')
+}*/
 //CLear table and start clean
 function renderEntry() {
     $('#entryTable').empty();
@@ -54,7 +60,7 @@ for (let employee of entries) {
         <td>${employee.id}</td>
         <td>${employee.title}</td>
         <td>$${employee.salary}</td>
-        <td><button data-id"${employee.id}" class="delBtn1">Delete</button></td>
+        <td><button class="delBtn1">Delete</button></td>
     </tr>
  `)
  };
