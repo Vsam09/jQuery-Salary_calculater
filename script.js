@@ -7,13 +7,14 @@ $(document).ready(onReady)
 function onReady() {
     console.log('Run jQuery..')
     $('#addBtn').on('click', entry);
+    $('#addBtn').on('click', emptyEntryInputs);
     $(document).on('click', ".delBtn1", deleteEntry );
 }
 
 //Delete entry
 function deleteEntry(){
-    console.log('Delete Button working..')
-    $(this).empty();
+    console.log('Delete Button working..',$(this))
+    $(this).remove();
 }
 //End Delete entry
 
@@ -41,13 +42,13 @@ let employee = {
     return employee;
 }
 //End Collecting employee Information
-/*function emptyEntryInputs() {
+function emptyEntryInputs() {
     $('#firstName').val(''),
     $('#lastName').val(''),
     $('#number').val(''),
     $('#title').val(''),
     $('#salary').val('')
-}*/
+}
 //CLear table and start clean
 function renderEntry() {
     $('#entryTable').empty();
